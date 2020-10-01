@@ -34,6 +34,12 @@ void Mergesort(int arr[],int low,int high)
     Mergesort(arr,mid+1,high);
     Merge(arr,low,high);
 }
+void output(int *arr,int n)
+{
+    for(int i=0;i<n;i++)
+          cout << arr[i] << " ";
+    cout << endl;
+}
 int main()
 {
     int n;
@@ -42,7 +48,6 @@ int main()
     for(int i=0;i<n;i++)
         cin >> arr[i];
     Mergesort(arr,0,n-1);
-    for(int i=0;i<n;i++)
-        cout << arr[i] << " ";
+    output(arr,n);
     return 0;
 }
