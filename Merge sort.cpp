@@ -6,7 +6,7 @@ void Merge(int *arr,int l,int r)
     int i=l;
     int j = mid+1;
     int k=l;
-    int temp[100];
+    int temp[10000];
     while(i<=mid && j<=r)
     {
         if(arr[i]<arr[j])
