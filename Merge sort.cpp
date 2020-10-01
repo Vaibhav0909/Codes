@@ -25,14 +25,14 @@ void Merge(int *arr,int l,int r)
     for(int i=l;i<=r;i++)
         arr[i] = temp[i];
 }
-void MergeSort(int arr[],int start,int end)
+void Mergesort(int arr[],int low,int high)
 {
-    if(start>=end)
-        return;
-    int mid = (start+end)/2;
-    MergeSort(arr,start,mid);
-    MergeSort(arr,mid+1,end);
-    Merge(arr,start,end);
+    if(low>=high)
+         return;
+    int mid = low+high/2;
+    Mergesort(arr,low,mid);
+    Mergesort(arr,mid+1,high);
+    Merge(arr,low,high);
 }
 int main()
 {
@@ -41,7 +41,7 @@ int main()
     int arr[n];
     for(int i=0;i<n;i++)
         cin >> arr[i];
-    MergeSort(arr,0,n-1);
+    Mergesort(arr,0,n-1);
     for(int i=0;i<n;i++)
         cout << arr[i] << " ";
     return 0;
